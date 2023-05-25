@@ -1,0 +1,38 @@
+body {
+    background: #041C32;
+    color: #C4DDFF;
+}
+nav {
+    border: 1px solid  #C4DDFF;
+    padding: 10px;
+  }
+
+header ol, header li{
+    display: flex;
+    text-align: center;
+    list-style: none;
+    margin-right: auto;
+}
+main{
+    text-align: center;
+}
+
+#relogio{
+    font-size: 100px;
+    font-family: monospace;
+    border: 1px solid #C4DDFF;
+    background-color:#C4DDFF ;
+    padding: 20px;
+    color: #041C32;
+    max-width: 30%;
+    margin: 50px auto 50px;
+    border-radius: 10%;
+}
+
+#botao_iniciar, #botao_pausar, #botao_zerar{
+    border: 1px solid #C4DDFF;
+    border-radius: 10%;
+    background-color:#C4DDFF ;
+    font-family: monospace;
+    font-size: 25px;
+}
