@@ -20,18 +20,18 @@ main{
 #relogio{
     font-size: 100px;
     font-family: monospace;
-    border: 1px solid #C4DDFF;
+    border: 1px solid #000000;
     background-color:#C4DDFF ;
     padding: 20px;
     color: #041C32;
     max-width: 30%;
     margin: 50px auto 50px;
-    border-radius: 10%;
+    border-radius: 5%;
 }
 
 #botao_iniciar, #botao_pausar, #botao_zerar{
-    border: 1px solid #C4DDFF;
-    border-radius: 10%;
+    border: 1px solid #000000;
+    border-radius: 5%;
     background-color:#C4DDFF ;
     font-family: monospace;
     font-size: 25px;

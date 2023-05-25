@@ -1,17 +1,19 @@
-import { iniciaCronometro, pausaCronometro } from "./funcoes.js"
+import { iniciaCronometro, pausaCronometro, zeraCronometro } from "./funcoes.js"
 
 //Variáveis
 const botaoIniciar = document.getElementById('botao_iniciar')
 const botaoPausar = document.getElementById('botao_pausar')
 const botaoZerar = document.getElementById('botao_zerar')
 
-
-
 //Eventos
 botaoIniciar.addEventListener('click', () =>{
-    iniciaCronometro()
+    iniciaCronometro();
 })
 
 botaoPausar.addEventListener('click', () => {
-  pausaCronometro()
+    pausaCronometro()
+})
+
+botaoZerar.addEventListener('click', () => {
+    zeraCronometro();
 })
