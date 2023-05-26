@@ -36,3 +36,12 @@ main{
     font-family: monospace;
     font-size: 25px;
 }
+
+.segunda_div_main{
+    margin-top: 50px;
+    
+}
+.inputs{
+    background-color: #C4DDFF;
+    width: 10%;
+}

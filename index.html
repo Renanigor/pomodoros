@@ -21,12 +21,22 @@
         </nav>
     </header>
     <main>
-        <h1> Relógio </h1>
-        <div id="relogio">00:00:00</div>
-            <input id="botao_iniciar" type="button" value="INICIAR"></input>
-            <input id="botao_pausar" type="button" value="PAUSAR"></input>
-            <input id="botao_zerar" type="button" value="ZERAR"></input>
+        <div>
+            <h1> Relógio </h1>
+            <div id="relogio">00:00:00</div>
+                <input id="botao_iniciar" type="button" value="INICIAR"></input>
+                <input id="botao_pausar" type="button" value="PAUSAR"></input>
+                <input id="botao_zerar" type="button" value="ZERAR"></input>
+        </div>
+        <div class="segunda_div_main">
+            <h1> Selecione suas regras! </h1>
+            <h2> Minutos estudando     
+                <input id="minutos_de_estudo" class="inputs"></input>
+            </h2>
+            <input id="enviar_configuracoes" class="inputs" value="Selecionar" type="submit"> </input>
+        </div>
     </main>
     <script src="./app/app.js" type="module"></script>
+    <script src="./app/funcoes.js"></script>
 </body>
 </html>

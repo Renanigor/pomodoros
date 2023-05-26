@@ -1,5 +1,3 @@
-import { iniciaCronometro, pausaCronometro, zeraCronometro, visualizaBotoes } from "./funcoes.js"
-
 //Variáveis
 const botaoIniciar = document.getElementById('botao_iniciar')
 const botaoPausar = document.getElementById('botao_pausar')
