@@ -18,7 +18,5 @@ botaoPausar.addEventListener('click', (e) => {
 
 botaoZerar.addEventListener('click', (e) => {
     zeraCronometro();
-    botaoIniciar.style.visibility = 'visible';
-    botaoIniciar.value = 'INICIAR';
-    visualizaBotoes(e.target)
+    visualizaBotoes(e.target, botaoIniciar)
 })

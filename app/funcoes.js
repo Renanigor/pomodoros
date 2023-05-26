@@ -2,13 +2,13 @@
 const relogio = document.getElementById('relogio')
 let intervalo;
 
+let segundos = 0;
+let minutos = 0;
+let horas = 0;
+
 
 export function iniciaCronometro() {
-    
-    let segundos = 0;
-    let minutos = 0;
-    let horas = 0;
-    
+
     intervalo = setInterval(() => {
     segundos++;
     if (segundos === 60) {
@@ -21,7 +21,8 @@ export function iniciaCronometro() {
     }
     relogio.innerHTML = `${horas}:${minutos}:${segundos}`;
     }, 1000);
-    }
+}
+
   
 
 export function pausaCronometro(){
@@ -35,7 +36,7 @@ export function zeraCronometro(){
 }
 export function visualizaBotoes(posicaoDoClick, botaoIniciar){
     
-    if(posicaoDoClick.value == 'INICIAR'){
+    if(posicaoDoClick.value == 'INICIAR' || posicaoDoClick.value == 'REINICIAR'){
        posicaoDoClick.style.visibility = 'hidden';
     }
     
