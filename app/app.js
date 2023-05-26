@@ -1,7 +1,6 @@
-//Variáveis
-const botaoIniciar = document.getElementById('botao_iniciar')
-const botaoPausar = document.getElementById('botao_pausar')
-const botaoZerar = document.getElementById('botao_zerar')
+//Importações
+import {botaoIniciar, botaoPausar, botaoZerar, botaoEnviarConfiguracoes, minutoEstudo} from './variaveis.js'
+import {iniciaCronometro, pausaCronometro, zeraCronometro, visualizaBotoes, enviaProIntervalo} from './funcoes.js'
 
 //Eventos
 botaoIniciar.addEventListener('click', (e) =>{
@@ -18,3 +17,9 @@ botaoZerar.addEventListener('click', (e) => {
     zeraCronometro();
     visualizaBotoes(e.target, botaoIniciar)
 })
+
+botaoEnviarConfiguracoes.addEventListener('click', () => {
+    enviaProIntervalo(minutoEstudo) 
+
+})    
+

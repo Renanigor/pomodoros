@@ -1,21 +1,14 @@
-const minutosEstudo = document.getElementById('minutos_de_estudo')
-const botaoEnviarConfiguracoes = document.getElementById('enviar_configuracoes')
-const relogio = document.getElementById('relogio')
 
-let intervalo;
+// Variáveis que não podem estar em outro arquivo.
+let intervalo
 let segundos = 0;
 let minutos = 0;
 let horas = 0;
 
-botaoEnviarConfiguracoes.addEventListener('click', () => {
-
-})
+let relogio = document.getElementById('relogio')
 
 //Funções
-
-
-
-function iniciaCronometro() {
+export function iniciaCronometro() {
 
     intervalo = setInterval(() => {
     segundos++;
@@ -31,15 +24,15 @@ function iniciaCronometro() {
     }, 1000);
 }
 
-function formataTempo(tempo){
+export function formataTempo(tempo){
     return tempo.toString().padStart(2, '0');
 }
 
-function pausaCronometro(){
+export function pausaCronometro(){
     clearInterval(intervalo)
 }
 
-function zeraCronometro(){
+export function zeraCronometro(){
     clearInterval(intervalo);
     
     relogio.innerHTML = '00:00:00';
@@ -48,7 +41,8 @@ function zeraCronometro(){
     horas = 0;
     
 }
-function visualizaBotoes(posicaoDoClick, botaoIniciar){
+
+export function visualizaBotoes(posicaoDoClick, botaoIniciar){
     
     if(posicaoDoClick.value == 'INICIAR' || posicaoDoClick.value == 'REINICIAR'){
        posicaoDoClick.style.visibility = 'hidden';
@@ -64,4 +58,9 @@ function visualizaBotoes(posicaoDoClick, botaoIniciar){
         botaoIniciar.value = 'INICIAR';
     }
 
+}
+
+export function enviaProIntervalo(minutos){
+    console.log(minutos.value);
+    minutos.style.display = 'none';
 }
