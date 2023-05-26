@@ -33,3 +33,20 @@ export function zeraCronometro(){
     relogio.innerHTML = '00:00:00'
     
 }
+export function visualizaBotoes(posicaoDoClick, botaoIniciar){
+    
+    if(posicaoDoClick.value == 'INICIAR'){
+       posicaoDoClick.style.visibility = 'hidden';
+    }
+    
+    if(posicaoDoClick.value == 'PAUSAR'){
+        botaoIniciar.style.visibility = 'visible';
+        botaoIniciar.value = 'REINICIAR';
+    }
+
+    if(posicaoDoClick.value == 'ZERAR'){
+        botaoIniciar.style.visibility = 'visible';
+        botaoIniciar.value = 'INICIAR';
+    }
+
+}
