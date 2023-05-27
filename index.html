@@ -20,22 +20,35 @@
             </ol>
         </nav>
     </header>
-    <main>
-        <div>
-            <h1> Relógio </h1>
+    <div class="content">
+        <div class="barras_laterais">
+            <h1> SELECIONE SUAS REGRAS </h1>
+            <h4> MINUTOS ESTUDANDO:     
+                <input id="minuto_estudo" class="inputs" ></input>
+            </h4>
+            <h4> MINUTOS DESCANSANDO:     
+                <input id="minuto_descanso" class="inputs" ></input>
+            </h4>
+            <input id="enviar_configuracoes" value="ENVIAR" type="submit"> </input>
+        </div>
+        <main>
+            <h1> RELÓGIO </h1>
             <div id="relogio">00:00:00</div>
-                <input id="botao_iniciar" type="button" value="INICIAR"></input>
-                <input id="botao_pausar" type="button" value="PAUSAR"></input>
-                <input id="botao_zerar" type="button" value="ZERAR"></input>
-        </div>
-        <div class="segunda_div_main">
-            <h1> Selecione suas regras! </h1>
-            <h2> Minutos estudando     
-                <input id="minuto_estudo" class="inputs"></input>
-            </h2>
-            <input id="enviar_configuracoes" class="inputs" value="Selecionar" type="submit"> </input>
-        </div>
-    </main>
+            <input id="botao_iniciar" type="button" value="INICIAR"></input>
+            <input id="botao_pausar" type="button" value="PAUSAR"></input>
+            <input id="botao_zerar" type="button" value="ZERAR"></input>
+        </main>      
+        <aside class="barras_laterais">
+            <h1> CAMPO DE INFORMAÇÕES </h1>
+            <h4> MINUTOS ESTUDANDO: </h4>
+                <h3 id="inserir_minutos_estudo"> </h3>
+            <h4> MINUTOS DESCANSANDO: </h4>
+                <h3 id="inserir_minutos_descanso"> </h3>
+
+            <input id="limpar_configuracoes" value="LIMPAR" type="submit"> </input>
+
+        </aside>
+    </div>
     <script src="./app/app.js" type="module"></script>
 </body>
 </html>

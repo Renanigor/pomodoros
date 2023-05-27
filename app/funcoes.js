@@ -1,3 +1,4 @@
+import { inserirMinutoDescanso, inserirMinutoEstudo, minutoEstudo, minutoDescanso, guardaValor } from "./variaveis.js";
 
 // Variáveis que não podem estar em outro arquivo.
 let intervalo
@@ -8,7 +9,7 @@ let horas = 0;
 let relogio = document.getElementById('relogio')
 
 //Funções
-export function iniciaCronometro() {
+export function iniciaCronometro(tempoDeEstudo) {
 
     intervalo = setInterval(() => {
     segundos++;
@@ -21,8 +22,14 @@ export function iniciaCronometro() {
         horas++;
     }
     relogio.innerHTML = `${formataTempo(horas)}:${formataTempo(minutos)}:${formataTempo(segundos)}`;
-    }, 1000);
+    
+    tempoDeEstudoAlcancado(minutos, tempoDeEstudo)
+    // console.log(minutos, tempoDeEstudo)
+
+}, 100);
+
 }
+
 
 export function formataTempo(tempo){
     return tempo.toString().padStart(2, '0');
@@ -60,7 +67,30 @@ export function visualizaBotoes(posicaoDoClick, botaoIniciar){
 
 }
 
-export function enviaProIntervalo(minutos){
-    console.log(minutos.value);
-    minutos.style.display = 'none';
+export function enviaMinutosEstudo(estudando){
+    if (estudando >= 1)    
+    inserirMinutoEstudo.innerHTML = `<p> ${estudando}:00 </p>`;
+    minutoEstudo.value = '';  
+}
+
+export function enviaMinutosDescanso(descansando){
+    if (descansando >= 1)      
+    inserirMinutoDescanso.innerHTML = `<p> ${descansando}:00 </p>`   
+    minutoDescanso.value = '';
+ 
+}
+
+export function limpaConfiguracoes(){
+
+    inserirMinutoEstudo.innerHTML = '';
+
+    inserirMinutoDescanso.innerHTML = '';
+
+}
+
+function tempoDeEstudoAlcancado(minutos, tempoDeEstudo){
+
+    if (minutos == parseInt(tempoDeEstudo)){
+        alert('Tempo de estudo alcançado, vá descansar! ')
+    }
 }

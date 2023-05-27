@@ -5,7 +5,7 @@ body {
 nav {
     border: 1px solid  #C4DDFF;
     padding: 10px;
-  }
+}
 
 header ol, header li{
     display: flex;
@@ -13,35 +13,45 @@ header ol, header li{
     list-style: none;
     margin-right: auto;
 }
+
+.content{
+    display: flex;
+    margin-top: 5%;
+}
+
 main{
+    width: 40%;
     text-align: center;
 }
 
+.barras_laterais{
+    width: 30%;
+    text-align: center;
+}
+#inserir_minutos_estudo, #inserir_minutos_descanso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 #relogio{
-    font-size: 100px;
+    font-size: 90px;
     font-family: monospace;
     border: 1px solid #000000;
     background-color:#C4DDFF ;
     padding: 20px;
     color: #041C32;
-    max-width: 30%;
     margin: 50px auto 50px;
-    border-radius: 5%;
 }
-
-#botao_iniciar, #botao_pausar, #botao_zerar{
+#botao_iniciar, #botao_pausar, #botao_zerar, #enviar_configuracoes, #limpar_configuracoes{
     border: 1px solid #000000;
-    border-radius: 5%;
     background-color:#C4DDFF ;
     font-family: monospace;
     font-size: 25px;
 }
 
-.segunda_div_main{
-    margin-top: 50px;
-    
-}
 .inputs{
     background-color: #C4DDFF;
-    width: 10%;
+    width: 20%;
 }

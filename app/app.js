@@ -1,10 +1,13 @@
 //Importações
-import {botaoIniciar, botaoPausar, botaoZerar, botaoEnviarConfiguracoes, minutoEstudo} from './variaveis.js'
-import {iniciaCronometro, pausaCronometro, zeraCronometro, visualizaBotoes, enviaProIntervalo} from './funcoes.js'
+import {botaoIniciar, botaoPausar, botaoZerar, botaoEnviarConfiguracoes,
+     minutoEstudo, minutoDescanso, botaoLimparConfiguracoes, guardaValor} from './variaveis.js'
+
+import {iniciaCronometro, pausaCronometro, zeraCronometro, visualizaBotoes, 
+    enviaMinutosDescanso, enviaMinutosEstudo, limpaConfiguracoes} from './funcoes.js'
 
 //Eventos
 botaoIniciar.addEventListener('click', (e) =>{
-    iniciaCronometro();
+    iniciaCronometro(guardaValor);
     visualizaBotoes(e.target)
 })
 
@@ -19,7 +22,11 @@ botaoZerar.addEventListener('click', (e) => {
 })
 
 botaoEnviarConfiguracoes.addEventListener('click', () => {
-    enviaProIntervalo(minutoEstudo) 
-
+    enviaMinutosEstudo( minutoEstudo.value);
+    enviaMinutosDescanso( minutoDescanso.value);    
 })    
 
+botaoLimparConfiguracoes.addEventListener('click', () => {
+    limpaConfiguracoes()
+
+})
