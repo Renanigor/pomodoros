@@ -1,13 +1,13 @@
 //Importações
 import {botaoIniciar, botaoPausar, botaoZerar, botaoEnviarConfiguracoes,
-     minutoEstudo, minutoDescanso, botaoLimparConfiguracoes, guardaValor} from './variaveis.js'
+     minutoEstudo, minutoDescanso, botaoLimparConfiguracoes} from './variaveis.js'
 
 import {iniciaCronometro, pausaCronometro, zeraCronometro, visualizaBotoes, 
     enviaMinutosDescanso, enviaMinutosEstudo, limpaConfiguracoes} from './funcoes.js'
 
 //Eventos
 botaoIniciar.addEventListener('click', (e) =>{
-    iniciaCronometro(guardaValor);
+    iniciaCronometro(minutoEstudo.value);
     visualizaBotoes(e.target)
 })
 

@@ -13,5 +13,4 @@ export const inserirMinutoDescanso = document.getElementById('inserir_minutos_de
 
 
 //Guarda valor
-export const guardaValor = minutoEstudo.value
 
