@@ -34,8 +34,8 @@ main{
     align-items: center;
 
 }
-.minutos_descansar{
-    background-color: red;
+.minutos_descansar {
+    background-color: #25e4bc !important;
 }
 
 #relogio{

@@ -30,3 +30,4 @@ botaoLimparConfiguracoes.addEventListener('click', () => {
     limpaConfiguracoes()
 
 })
+

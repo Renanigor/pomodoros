@@ -12,5 +12,6 @@ export const inserirMinutoEstudo = document.getElementById('inserir_minutos_estu
 export const inserirMinutoDescanso = document.getElementById('inserir_minutos_descanso')
 
 
-//Guarda valor
+//Status
+export const statusDeEstudo = document.getElementById('status')
 
