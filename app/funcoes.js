@@ -1,4 +1,5 @@
-import { inserirMinutoDescanso, inserirMinutoEstudo, minutoEstudo, minutoDescanso, statusDeEstudo } from "./variaveis.js";
+import { inserirMinutoDescanso, inserirMinutoEstudo, minutoEstudo, minutoDescanso, statusDeEstudo, alarme } from "./variaveis.js";
+
 // Variáveis que não podem estar em outro arquivo.
 let intervalo
 let segundos = 0;
@@ -7,11 +8,12 @@ let horas = 0;
 
 let relogio = document.getElementById('relogio')
 
+
 //Funções
 export function iniciaCronometro(tempoDeEstudo) {
     
     statusDeEstudo.innerHTML = 'ESTUDANDO'
-
+    
     intervalo = setInterval(() => {
     segundos++;
     if (segundos === 60) {
@@ -25,10 +27,10 @@ export function iniciaCronometro(tempoDeEstudo) {
     relogio.innerHTML = `${formataTempo(horas)}:${formataTempo(minutos)}:${formataTempo(segundos)}`;
     
     tempoDeEstudoAlcancado(minutos, tempoDeEstudo)
-}, 100);
+}, 10);
+
 
 }
-
 
 export function formataTempo(tempo){
     return tempo.toString().padStart(2, '0');
@@ -37,18 +39,18 @@ export function formataTempo(tempo){
 export function pausaCronometro(){
     
     statusDeEstudo.innerHTML = 'PARADO'
-
     clearInterval(intervalo)
 }
 
 export function zeraCronometro(){
+    
+    statusDeEstudo.innerHTML = 'ZERADO'
     clearInterval(intervalo);
     
     relogio.innerHTML = '00:00:00';
     segundos = 0;
     minutos = 0;
     horas = 0;
-    
 }
 
 export function visualizaBotoes(posicaoDoClick, botaoIniciar){
@@ -77,35 +79,34 @@ export function enviaMinutosEstudo(estudando){
 
 export function enviaMinutosDescanso(descansando){
     if (descansando >= 1)      
-    inserirMinutoDescanso.innerHTML = `<p> ${descansando}:00 </p>`   
+    inserirMinutoDescanso.innerHTML = `<p> ${descansando}:00 </p>`;   
     // minutoDescanso.value = '';
- 
 }
 
 export function limpaConfiguracoes(){
 
     inserirMinutoEstudo.innerHTML = '';
-
     inserirMinutoDescanso.innerHTML = '';
-
 }
+
 
 //Funções que controlam a contagem do relógio.
 function tempoDeEstudoAlcancado(minutos, tempoDeEstudo){
     if (minutos == parseInt(tempoDeEstudo)){
         pausaCronometro();
+        alarme.play();
+        
         tempoDeDescansar(minutoDescanso.value);
     }
 }
 
-
 function tempoDeDescansar(minutos) {
+    clearInterval(intervalo);
     relogio.classList.add("minutos_descansar"); 
     alert('Tempo de estudo alcançado, vá descansar!');
     
     relogio.innerHTML = `${formataTempo(horas)}:${formataTempo(minutos)}:${formataTempo(segundos)}` 
     contagemRegressiva(minutos)
-
 }
 
 function contagemRegressiva(minutos) {
@@ -120,14 +121,20 @@ function contagemRegressiva(minutos) {
             segundos--;
         }
         if (minutos === 0 && segundos === 0) {
-            clearInterval(intervalo);
-            alert('Volte a estudar!')
-            zeraCronometro();
-            iniciaCronometro(minutoEstudo.value)
+            //Remove a classe
             relogio.classList.remove("minutos_descansar"); 
+            
+            // Para o relógio
+            clearInterval(intervalo);
+            alarme.play();
+            alert('Volte a estudar!');
+            
+            //Reinicia o relógio
+            zeraCronometro();
+            iniciaCronometro(minutoEstudo.value);
 
         }
         relogio.innerHTML = `${formataTempo(horas)}:${formataTempo(minutos)}:${formataTempo(segundos)}`;
-    }, 100);
+    }, 10);
 
 }

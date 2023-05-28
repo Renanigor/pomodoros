@@ -15,3 +15,6 @@ export const inserirMinutoDescanso = document.getElementById('inserir_minutos_de
 //Status
 export const statusDeEstudo = document.getElementById('status')
 
+//Sons
+export const alarme = document.getElementById('alarme')
+
