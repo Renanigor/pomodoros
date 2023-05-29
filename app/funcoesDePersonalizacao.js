@@ -1,4 +1,4 @@
-import { inserirMinutoDescanso, inserirMinutoEstudo, inserirTempoDescansado, inserirTempoEstudado, minutoDescanso, minutoEstudo, statusDeEstudo } from "./variaveis.js";
+import { inserirMinutoDescanso, inserirMinutoEstudo, inserirTempoDescansado, inserirTempoEstudado, minutoDescanso, minutoEstudo } from "./variaveis.js";
 
 let tempoTotalEstudado = 0;
 let tempoTotalDescansado = 0;
@@ -6,13 +6,13 @@ let tempoTotalDescansado = 0;
 
 export function enviaMinutosEstudo(estudando){
     if (estudando >= 1)    
-    inserirMinutoEstudo.innerHTML = `<p> ${estudando}:00 </p>`;
+    inserirMinutoEstudo.innerHTML = `<h3 class="inputs"> ${estudando}:00 </h3>`;
     // minutoEstudo.value = '';  
 }
 
 export function enviaMinutosDescanso(descansando){
     if (descansando >= 1)      
-    inserirMinutoDescanso.innerHTML = `<p> ${descansando}:00 </p>`;   
+    inserirMinutoDescanso.innerHTML = `<h3 class="inputs"> ${descansando}:00 </h3>`;   
     // minutoDescanso.value = '';
 }
 
@@ -20,6 +20,12 @@ export function limpaConfiguracoes(){
 
     inserirMinutoEstudo.innerHTML = '';
     inserirMinutoDescanso.innerHTML = '';
+
+    minutoEstudo.value = '';
+    minutoDescanso.value = '';
+
+    inserirTempoEstudado.value = '';
+    inserirTempoDescansado.value = '';
 }
 
 export function marcaTempoDeEstudo(){

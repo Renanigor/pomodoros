@@ -93,7 +93,7 @@ function contagemRegressiva(minutosDeDescanso) {
             //Para o relógio
             clearInterval(intervalo);
             alarme.play();
-            // alert('Volte a estudar!');
+            alert('Volte a estudar!');
 
             reiniciaORelogio();
             
@@ -110,7 +110,7 @@ function quandoTempoDeEstudoAlcancado(){
     //Mensagem
     clearInterval(intervalo);
     alarme.play();
-    // alert('Tempo de estudo alcançado, vá descansar!');
+    alert('Tempo de estudo alcançado, vá descansar!');
     
     //Status e Style
     statusDeEstudo.innerHTML = 'DESCANSANDO';
