@@ -10,7 +10,8 @@ export const minutoEstudo = document.getElementById('minuto_estudo')
 export const minutoDescanso = document.getElementById('minuto_descanso')
 export const inserirMinutoEstudo = document.getElementById('inserir_minutos_estudo')
 export const inserirMinutoDescanso = document.getElementById('inserir_minutos_descanso')
-
+export const inserirTempoEstudado = document.getElementById('inserir_tempo_estudado')
+export const inserirTempoDescansado = document.getElementById('inserir_tempo_descansado')
 
 //Status
 export const statusDeEstudo = document.getElementById('status')

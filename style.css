@@ -1,9 +1,9 @@
 body {
-    background: #041C32;
-    color: #C4DDFF;
+    background: #090014;
+    color: #d8d5c9;
 }
 nav {
-    border: 1px solid  #C4DDFF;
+    border: 1px solid  #d8d5c9;
     padding: 10px;
 }
 
@@ -27,34 +27,36 @@ main{
 .barras_laterais{
     width: 30%;
     text-align: center;
+    margin-left: 5%;
 }
 #inserir_minutos_estudo, #inserir_minutos_descanso {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-}
-.minutos_descansar {
-    background-color: #25e4bc !important;
 }
 
 #relogio{
     font-size: 90px;
     font-family: monospace;
-    border: 1px solid #000000;
-    background-color:#C4DDFF ;
+    background-color:#d8d5c9 ;
     padding: 20px;
-    color: #041C32;
+    color: #090014;
     margin: 50px auto 50px;
 }
+
 #botao_iniciar, #botao_pausar, #botao_zerar, #enviar_configuracoes, #limpar_configuracoes{
-    border: 1px solid #000000;
-    background-color:#C4DDFF ;
+    background-color:#d8d5c9 ;
     font-family: monospace;
     font-size: 25px;
 }
 
 .inputs{
-    background-color: #C4DDFF;
+    background-color: #d8d5c9;
     width: 20%;
+}
+
+.tempo_estudado{
+    display: flex;
+    justify-content: space-around;
+    margin: 3%;
 }

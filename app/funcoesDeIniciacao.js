@@ -1,3 +1,4 @@
+import { marcaTempoDeDescanso, marcaTempoDeEstudo } from "./funcoesDePersonalizacao.js";
 import { minutoEstudo, minutoDescanso, statusDeEstudo, alarme, botaoPausar, botaoZerar } from "./variaveis.js";
 
 // Variáveis que não podem estar em outro arquivo.
@@ -61,8 +62,10 @@ export function visualizaBotoesStatus(posicaoDoClick, botaoIniciar){
 }
 
 function tempoDeEstudoAlcancado(minutos, tempoDeEstudo){
+    
     if (minutos == parseInt(tempoDeEstudo)){
-        quandoTempoDeEstudoAlcancado()
+        marcaTempoDeEstudo();
+        quandoTempoDeEstudoAlcancado();
         tempoDeDescansar(minutoDescanso.value);
     }
 }
@@ -90,7 +93,7 @@ function contagemRegressiva(minutosDeDescanso) {
             //Para o relógio
             clearInterval(intervalo);
             alarme.play();
-            alert('Volte a estudar!');
+            // alert('Volte a estudar!');
 
             reiniciaORelogio();
             
@@ -107,16 +110,15 @@ function quandoTempoDeEstudoAlcancado(){
     //Mensagem
     clearInterval(intervalo);
     alarme.play();
-    alert('Tempo de estudo alcançado, vá descansar!');
+    // alert('Tempo de estudo alcançado, vá descansar!');
     
     //Status e Style
     statusDeEstudo.innerHTML = 'DESCANSANDO';
-    relogio.classList.add("minutos_descansar"); 
-
 }
 
 function reiniciaORelogio(){
     //Funções
+    marcaTempoDeDescanso();
     zeraCronometro();
     iniciaCronometro(minutoEstudo.value);
     
