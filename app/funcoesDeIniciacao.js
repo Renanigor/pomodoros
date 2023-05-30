@@ -23,7 +23,7 @@ export function iniciaCronometro(tempoDeEstudo) {
     relogio.innerHTML = `${formataTempo(horas)}:${formataTempo(minutos)}:${formataTempo(segundos)}`;
     
     tempoDeEstudoAlcancado(minutos, tempoDeEstudo)
-}, 10);
+}, 1000);
 }
 
 export function pausaCronometro(){    
@@ -99,7 +99,7 @@ function contagemRegressiva(minutosDeDescanso) {
             
         }
         relogio.innerHTML = `${formataTempo(horas)}:${formataTempo(minutosDeDescanso)}:${formataTempo(segundos)}`;
-    }, 10);
+    }, 1000);
 }
 
 function formataTempo(tempo){
