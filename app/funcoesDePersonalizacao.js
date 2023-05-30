@@ -6,13 +6,13 @@ let tempoTotalDescansado = 0;
 
 export function enviaMinutosEstudo(estudando){
     if (estudando >= 1)    
-    inserirMinutoEstudo.innerHTML = `<h3 class="inputs"> ${estudando}:00 </h3>`;
+    inserirMinutoEstudo.innerHTML = `<p> ${estudando}:00 </p>`;
     // minutoEstudo.value = '';  
 }
 
 export function enviaMinutosDescanso(descansando){
     if (descansando >= 1)      
-    inserirMinutoDescanso.innerHTML = `<h3 class="inputs"> ${descansando}:00 </h3>`;   
+    inserirMinutoDescanso.innerHTML = `<p> ${descansando}:00 </p>`;   
     // minutoDescanso.value = '';
 }
 
@@ -26,17 +26,20 @@ export function limpaConfiguracoes(){
 
     inserirTempoEstudado.value = '';
     inserirTempoDescansado.value = '';
+
 }
 
 export function marcaTempoDeEstudo(){
-    
     tempoTotalEstudado += parseInt(minutoEstudo.value)
-    inserirTempoEstudado.innerHTML = `<h4> ${tempoTotalEstudado} </h4>`;   
+    if (Number.isInteger(tempoTotalEstudado)){
+        inserirTempoEstudado.innerHTML = `<h6> ${tempoTotalEstudado}:00 </h6>`;
+    }
+
 }
 
 export function marcaTempoDeDescanso(){
-
     tempoTotalDescansado += parseInt(minutoDescanso.value)
-    inserirTempoDescansado.innerHTML = `<h4> ${tempoTotalDescansado} </h4>`;
-
+    if (Number.isInteger(tempoTotalDescansado)){
+    inserirTempoDescansado.innerHTML = `<h6> ${tempoTotalDescansado}:00 </h6>`; 
+    }
 }

@@ -39,11 +39,11 @@ main{
     display: flex;
     flex-direction: table;
     flex-direction: column;
-   text-align: center;
+    text-align: center;
 }
 
 #relogio{
-    font-size: 90px;
+    font-size: 5em;
     font-family: monospace;
     padding: 20px;
     color: #303030;
@@ -60,19 +60,32 @@ main{
 
 .inputs{
     width: 20%;
-    background-color: #C4DFDF;
+    background-color: #E3F4F4;
     border: 1px solid #303030;
 }
 
 .tempo_estudado{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 3%;
 }
+#inserir_minutos_estudo, #inserir_minutos_descanso{
+   background-color: #E3F4F4; 
+   width: 20%;
+   border: 1px solid #303030;
+   text-align: center;
+}
+
 #inserir_tempo_estudado, #inserir_tempo_descansado{
     background-color:#E3F4F4 ;
     width: 5%;
     text-align: center;
     border: 1px solid #303030;
 
+}
+
+footer{
+    text-align: center;
+    background: #C4DFDF;
+    padding: 3%;
 }
